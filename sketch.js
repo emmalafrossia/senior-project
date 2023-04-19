@@ -210,9 +210,6 @@ function draw() {
 
 function keyPressed(){
   switch(key){
-    case 'q' :
-      mgr.showScene(start);
-          break;
       case 'h':
             mgr.showScene(home);
             break;
@@ -223,64 +220,64 @@ function keyPressed(){
             mgr.showScene(timeline1);
             break;
         case '1':
-            mgr.showScene(denial);
+            mgr.showScene(start);
             break;
-        case '2':
-            mgr.showScene(denial2);
-            break;
-        case 'y':
-            mgr.showScene(timeline2);
-            break;
-        case '3':
-            mgr.showScene(anger);
-            break;
-        case 'u':
-            mgr.showScene(timeline3);
-            break;
-        case '4':
-            mgr.showScene(bargaining);
-            break;
-        case '5':
-            mgr.showScene(bargaining2);
-            break;
-        case 'i':
-            mgr.showScene(timeline4);
-            break;
-        case '6':
-            mgr.showScene(acceptance);
-            break;
-        case '7':
-            mgr.showScene(denial3);
-            break;
-        case '8':
-            mgr.showScene(depression);
-            break;
-        case 'o':
-            mgr.showScene(timeline5);
-            break;
-        case '9':
-            mgr.showScene(acceptance2);
-            break;
-        case '0':
-            mgr.showScene(acceptance3);
-            break;
-        case 'e':
-            mgr.showScene(end);
+        // case '2':
+        //     mgr.showScene(denial2);
+        //     break;
+        // case 'y':
+        //     mgr.showScene(timeline2);
+        //     break;
+        // case '3':
+        //     mgr.showScene(anger);
+        //     break;
+        // case 'u':
+        //     mgr.showScene(timeline3);
+        //     break;
+        // case '4':
+        //     mgr.showScene(bargaining);
+        //     break;
+        // case '5':
+        //     mgr.showScene(bargaining2);
+        //     break;
+        // case 'i':
+        //     mgr.showScene(timeline4);
+        //     break;
+        // case '6':
+        //     mgr.showScene(acceptance);
+        //     break;
+        // case '7':
+        //     mgr.showScene(denial3);
+        //     break;
+        // case '8':
+        //     mgr.showScene(depression);
+        //     break;
+        // case 'o':
+        //     mgr.showScene(timeline5);
+        //     break;
+        // case '9':
+        //     mgr.showScene(acceptance2);
+        //     break;
+        // case '0':
+        //     mgr.showScene(acceptance3);
+        //     break;
+        // case 'e':
+        //     mgr.showScene(end);
     }
     
   mgr.handleEvent("keyPressed");
   
   if(keyCode == LEFT_ARROW){
-    DmeX = DmeX-30;
+    DmeX = DmeX-40;
     phase = 1;
     Pme2Y = Pme2Y+100;
   }
   
   if(keyCode == RIGHT_ARROW){
-    DmeX = DmeX+30;
+    DmeX = DmeX+40;
     phase = 2;
-    AngMeX = AngMeX+30;
-    AccMeX = AccMeX+30;
+    AngMeX = AngMeX+40;
+    AccMeX = AccMeX+40;
     PmeY = PmeY+100;
     AngPhase = 2;
     Mphase = 1;
@@ -293,13 +290,13 @@ function keyPressed(){
   }
   
   if (keyCode === UP_ARROW){
-    AngMeY = AngMeY-30;
+    AngMeY = AngMeY-40;
     BoyX = BoyX+40;
     BoyY = BoyY-40;
     Bphase = 1;
     AngPhase = 1;
   }else if (keyCode === DOWN_ARROW){
-    AngMeY = AngMeY+30;
+    AngMeY = AngMeY+40;
     AngPhase = 2;
   }
   
@@ -1521,7 +1518,7 @@ function denial2(){
     
     if(sr1 == 0 && sg1 == 0 && sb1 == 0 && sr2 == 255 && sg2 == 255 && sb2 == 255 && sr3 == 0 && sg3 == 0 && sb3 == 0 && sr4 == 255 && sg4 == 255 && sb4 == 255 && sr5 == 0 && sg5 == 0 && sb5 == 0){
     timerNum ++; 
-      if(timerNum > 120){
+      if(timerNum > 300){
         timerNum = 0; 
        // print("joe is good"); 
         mgr.showScene(timeline2);
@@ -1530,8 +1527,6 @@ function denial2(){
     fill(255);
     textSize(32);
     text("You chose the straight flag!\n" + "So congrats, you're straight!", width/2, 810);
-      
-    //flagComplete.play();
   }
   }
 }
@@ -1966,12 +1961,11 @@ function bargaining2(){
     textSize(32);
     text("You chose the bisexual flag!\n" + "Great job for finally accepting that you like girls!", width/2, 810);
       timerNum ++; 
-      if(timerNum > 120){
+      if(timerNum > 300){
         timerNum = 0; 
        // print("joe is good"); 
         mgr.showScene(timeline4);
       }
-      //flagComplete.play();
   }
   }
 }
@@ -2190,7 +2184,7 @@ function acceptance(){
     }
     
     if(PmeY > 500){
-      PmeY = 500;
+      mgr.showScene(denial3);
     }
     
     if(Pme2Y > 450){
@@ -2346,7 +2340,7 @@ function denial3(){
       BoyY = 250;
       
       timerNum ++; 
-      if(timerNum > 120){
+      if(timerNum > 500){
         timerNum = 0; 
        // print("joe is good"); 
         mgr.showScene(depression);
@@ -2748,7 +2742,7 @@ function acceptance3(){
     text("You chose the lesbian flag!\n" + "You've finally accepted youself,\n" + "which is the best thing you can ever do.", width/2, 790);
       
       timerNum ++; 
-      if(timerNum > 120){
+      if(timerNum > 300){
         timerNum = 0;  
         mgr.showScene(end);
       }
@@ -2769,7 +2763,9 @@ function end(){
     noStroke();
     fill(255);
     textSize(37);
-    text("dear emma,\n\n" + "it hasn't been easy to get to this point.\n" + "there will still be hard times.\n" + "but the fact that you got here is amazing.\n" + "you're on the right path to accepting\n" + "yourself, not just in your sexuality,\n" + "but in you yourself. i'm so proud of you.\n" + "i love you. <3\n\n" + "- emma", width/2, 250);
+    text("dear emma,\n\n" + "it hasn't been easy to get to this point.\n" + "there will still be hard times.\n" + "but the fact that you got here is amazing.\n" + "you're on the right path to accepting\n" + "yourself, not just in your sexuality,\n" + "but in you yourself. i'm so proud of you.\n" + "i love you. <3\n\n" + "- emma", width/2, 180);
+    fill(0);
+    text("press 1 to start over!", width/2, 750);
   }
 }
 
