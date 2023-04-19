@@ -146,17 +146,16 @@ function preload(){
   Lthought = loadImage('assets/Lthought.png');
   Rthought = loadImage('assets/Rthought.PNG');
   
-  soundFormats('mp3', 'wav');
-  //credit to ZHRØ on freesound.com for this audio file!//
-  gameMusic = loadSound('assets/3qctj-7z3n7.wav');
-  //credit to Jofae on freesound.com for this audio file!//
+//   soundFormats('mp3', 'wav');
+//   //credit to ZHRØ on freesound.com for this audio file!//
+  gameMusic = loadSound('assets/gameMusic.mp3');
+//   //credit to Jofae on freesound.com for this audio file!//
   wallSlam = loadSound('assets/wallSlam.mp3');
-  //credit to connersaw8 on freesound.com for this audio file!//
+//   //credit to connersaw8 on freesound.com for this audio file!//
   wrongColor = loadSound('assets/wrongColor.wav');
-  //credit to Mrthenoronha on freesound.com for this audio file!//
+//   //credit to Mrthenoronha on freesound.com for this audio file!//
   rightColor = loadSound('assets/rightColor.wav');
-  //credit to Mrthenoronha on freesound.com for this audio file!//
-  flagComplete = loadSound('assets/flagComplete.wav');
+//   //credit to Mrthenoronha on freesound.com for this audio file!//
   
 }
 
@@ -257,16 +256,16 @@ function keyPressed(){
   mgr.handleEvent("keyPressed");
   
   if(keyCode == LEFT_ARROW){
-    DmeX = DmeX-20;
+    DmeX = DmeX-30;
     phase = 1;
     Pme2Y = Pme2Y+100;
   }
   
   if(keyCode == RIGHT_ARROW){
-    DmeX = DmeX+20;
+    DmeX = DmeX+30;
     phase = 2;
-    AngMeX = AngMeX+20;
-    AccMeX = AccMeX+20;
+    AngMeX = AngMeX+30;
+    AccMeX = AccMeX+30;
     PmeY = PmeY+100;
     AngPhase = 2;
     Mphase = 1;
@@ -279,13 +278,13 @@ function keyPressed(){
   }
   
   if (keyCode === UP_ARROW){
-    AngMeY = AngMeY-20;
+    AngMeY = AngMeY-30;
     BoyX = BoyX+40;
     BoyY = BoyY-40;
     Bphase = 1;
     AngPhase = 1;
   }else if (keyCode === DOWN_ARROW){
-    AngMeY = AngMeY+20;
+    AngMeY = AngMeY+30;
     AngPhase = 2;
   }
   
