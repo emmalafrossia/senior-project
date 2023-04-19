@@ -246,9 +246,9 @@ function keyPressed(){
         // case '6':
         //     mgr.showScene(acceptance);
         //     break;
-         case '7':
-             mgr.showScene(denial3);
-             break;
+         // case '7':
+         //     mgr.showScene(denial3);
+         //     break;
         // case '8':
         //     mgr.showScene(depression);
         //     break;
