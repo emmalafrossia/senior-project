@@ -246,9 +246,9 @@ function keyPressed(){
         // case '6':
         //     mgr.showScene(acceptance);
         //     break;
-        // case '7':
-        //     mgr.showScene(denial3);
-        //     break;
+         case '7':
+             mgr.showScene(denial3);
+             break;
         // case '8':
         //     mgr.showScene(depression);
         //     break;
@@ -276,7 +276,7 @@ function keyPressed(){
   if(keyCode == RIGHT_ARROW){
     DmeX = DmeX+40;
     phase = 2;
-    AngMeX = AngMeX+40;
+    AngMeX = AngMeX+30;
     AccMeX = AccMeX+40;
     PmeY = PmeY+100;
     AngPhase = 2;
@@ -290,13 +290,13 @@ function keyPressed(){
   }
   
   if (keyCode === UP_ARROW){
-    AngMeY = AngMeY-40;
+    AngMeY = AngMeY-30;
     BoyX = BoyX+40;
     BoyY = BoyY-40;
     Bphase = 1;
     AngPhase = 1;
   }else if (keyCode === DOWN_ARROW){
-    AngMeY = AngMeY+40;
+    AngMeY = AngMeY+30;
     AngPhase = 2;
   }
   
@@ -2281,7 +2281,7 @@ function denial3(){
       textSize(25);
       text("1. has to be loyal", 920, 280);
       text("2. has to be respectful to women", 990, 330);
-      text("3. can't say 'babe' or 'baby'", 975, 380);
+      text("3. can't call me 'babe' or 'baby'", 995, 380);
     }
     
     if(BoyX == 280 && BoyY == 330){
@@ -2294,8 +2294,8 @@ function denial3(){
       textSize(25);
       text("1. has to be loyal", 920, 280);
       text("2. has to be respectful to women", 990, 330);
-      text("3. can't say 'babe' or 'baby'", 975, 380);
-      text("4. cannot act like an alpha male", 990, 430);
+      text("3. can't call me 'babe' or 'baby'", 995, 380);
+      text("4. cannot be an 'alpha' male", 970, 430);
     }
     
     if(BoyX == 320 && BoyY == 290){
@@ -2308,9 +2308,9 @@ function denial3(){
       textSize(25);
       text("1. has to be loyal", 920, 280);
       text("2. has to be respectful to women", 990, 330);
-      text("3. can't say 'babe' or 'baby'", 975, 380);
-      text("4. cannot act like an alpha male", 990, 430);
-      text("5. under no circumstances can they\n" + "be built like a body builder. a lean\n" + "build would be best", 1000, 480);
+      text("3. can't call me 'babe' or 'baby'", 995, 380);
+      text("4. cannot be an 'alpha' male", 970, 430);
+      text("5. no body builders", 925, 480);
     }
     
     if(BoyX == 360 && BoyY == 250){
@@ -2319,11 +2319,12 @@ function denial3(){
       textSize(25);
       text("1. has to be loyal", 920, 280);
       text("2. has to be respectful to women", 990, 330);
-      text("3. can't say 'babe' or 'baby'", 975, 380);
-      text("4. cannot act like an alpha male", 990, 430);
-      text("5. under no circumstances can they\n" + "be built like a body builder. a lean\n" + "build would be best", 1000, 480);
-      text("6. can't reveal their lower half, ever", 1020, 590);
-      text("7.,......", 880, 640);
+      text("3. can't call me 'babe' or 'baby'", 995, 380);
+      text("4. cannot be an 'alpha' male", 970, 430);
+      text("5. no body builders", 925, 480);
+      text("6. can't reveal their lower half, ever", 1020, 530);
+      text("7.,......", 880, 580);
+      text("8.,......", 880, 630);
       
       noStroke();
       fill(255);
@@ -2342,7 +2343,6 @@ function denial3(){
       timerNum ++; 
       if(timerNum > 500){
         timerNum = 0; 
-       // print("joe is good"); 
         mgr.showScene(depression);
       }
     }
