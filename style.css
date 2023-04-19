@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 body {
    display: flex;
@@ -10,5 +11,5 @@ body {
  }
 canvas {
   display: block;
-  border: 2px dotted green;
+  border: 2px solid black;
 }

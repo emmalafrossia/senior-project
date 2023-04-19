@@ -4,6 +4,10 @@ let meRSP;
 let Mphase = 0;
 let emma = [];
 
+let isPlaying = false;
+
+let startPhase = 0;
+
 let PHSmeLSP, PHSmeRSP;
 let HSmeLSP, HSmeRSP;
 
@@ -162,11 +166,14 @@ function preload(){
 function setup() {
   createCanvas(1440, 900);
   
-  gameMusic.playMode('untilDone');
-  gameMusic.play();
+  // if(isPlaying == true){
+  //   gameMusic.playMode('untilDone');
+  //   gameMusic.play();
+  // }
   
   mgr = new SceneManager();
   
+  mgr.addScene(start);
   mgr.addScene(home);
   mgr.addScene(controls);
   mgr.addScene(timeline1);
@@ -192,12 +199,20 @@ function setup() {
 function draw() {
   mgr.draw();
   
-  gameMusic.play();
-  gameMusic.loop();
+  if(isPlaying == true){
+    gameMusic.playMode('untilDone');
+    // gameMusic.play();
+    gameMusic.play();
+    gameMusic.loop();
+  }
+  
 }
 
 function keyPressed(){
   switch(key){
+    case 'q' :
+      mgr.showScene(start);
+          break;
       case 'h':
             mgr.showScene(home);
             break;
@@ -761,6 +776,26 @@ function mousePressed(){
     fill(255);
     textSize(32);
     text('stop', width/2, 830);
+  }
+}
+
+function start(){
+  this.enter = function(){
+    
+  }
+  
+  this.draw = function(){
+    background(0);
+    
+    fill(255);
+    textSize(32);
+    textAlign(CENTER);
+    text("press anywhere to start", width/2, height/2);
+    
+    if(mouseIsPressed){
+      mgr.showScene(home);
+      isPlaying = true;
+    }
   }
 }
 
